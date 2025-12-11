@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compliance QuickStart LLC | High-Assurance Security Architecture</title>
+    <style>
+        /* --- RESET & VARIABLES --- */
+        :root {
+            /* Branding Colors based on your logo */
+            --bg-dark: #021331;       /* Deep Navy Background */
+            --primary: #0D2B51;       /* Lighter Navy (Card Backgrounds) */
+            --accent: #63767D;        /* Steel Grey (Accents/Borders) */
+            --highlight: #00d4ff;     /* Cyan/Tech Blue (Hover States) */
+            --text-main: #ffffff;
+            --text-muted: #d1d5db;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; }
+
+        /* --- HEADER --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background-color: rgba(2, 19, 49, 0.95); /* Slight transparency */
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--primary);
+            backdrop-filter: blur(5px);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            font-weight: 700;
+            font-size: 1.3rem;
+            letter-spacing: 1px;
+            color: var(--text-main);
+        }
+
+        .logo-img {
+            height: 50px; 
+            margin-right: 15px;
+        }
+
+        .nav-links a {
+            margin-left: 30px;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+        .nav-links a:hover { color: var(--highlight); }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            /* Subtle radial gradient to spotlight the text */
+            background: radial-gradient(circle at center, var(--primary) 0%, var(--bg-dark) 80%);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            max-width: 1000px;
+            margin-bottom: 25px;
+            line-height: 1.1;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: var(--text-muted);
+            max-width: 800px;
+            margin-bottom: 50px;
+            font-weight: 300;
+        }
+
+        .cta-button {
+            background-color: transparent;
+            border: 2px solid var(--accent);
+            color: var(--text-main);
+            padding: 15px 35px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: var(--accent);
+            border-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 0 20px rgba(99, 118, 125, 0.4);
+        }
+
+        /* --- SECTIONS --- */
+        section {
+            padding: 100px 10%;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            margin-bottom: 60px;
+            border-left: 6px solid var(--accent);
+            padding-left: 25px;
+            color: var(--text-main);
+        }
+
+        /* --- ABOUT --- */
+        .about-text p {
+            margin-bottom: 25px;
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 950px;
+            line-height: 1.8;
+        }
+
+        .patent-box {
+            margin-top: 30px;
+            padding: 15px 20px;
+            border-left: 3px solid var(--highlight);
+            background: rgba(255, 255, 255, 0.03);
+            display: inline-block;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* --- CAPABILITIES GRID --- */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+        }
+
+        .card {
+            background-color: var(--primary);
+            padding: 40px;
+            border-radius: 6px;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: translateY(-7px);
+            border-color: var(--accent);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--text-main);
+        }
+
+        .card p {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-bottom: 25px;
+        }
+
+        .tag-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            background-color: rgba(99, 118, 125, 0.25);
+            color: var(--text-muted);
+            padding: 5px 10px;
+            border-radius: 4px;
+            border: 1px solid rgba(99, 118, 125, 0.3);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: #010c1f; /* Slightly darker than body */
+            padding: 60px 10%;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .footer-cta h3 {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            font-weight: 400;
+        }
+
+        .copyright {
+            margin-top: 50px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            opacity: 0.5;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .hero p { font-size: 1.1rem; }
+            section { padding: 60px 5%; }
+            header { flex-direction: column; gap: 20px; }
+            .nav-links a { margin: 0 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="logo.png" alt="CQ Logo" class="logo-img"> 
+            <span>Compliance QuickStart LLC</span>
+        </div>
+        <nav class="nav-links">
+            <a href="#about">About</a>
+            <a href="#capabilities">Capabilities</a>
+            <a href="https://www.linkedin.com/in/christopherdavis/" target="_blank">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Harmonizing Safety-Critical Compliance<br>with Modern Cloud & AI Architecture</h1>
+        <p>High-assurance security architecture for the world’s most critical systems.</p>
+        <br>
+        <a href="https://www.linkedin.com/in/christopherdavis/" target="_blank" class="cta-button">
+            Connect on LinkedIn
+        </a>
+    </section>
+
+    <section id="about">
+        <h2 class="section-title">High-Assurance Security Architecture</h2>
+        <div class="about-text">
+            <p>Compliance QuickStart LLC is a security architecture and advisory firm dedicated to the principle that effective security is universal: identify the requirements, design the architecture, and enforce the controls.</p>
+            <p>We specialize in bringing the rigor of <strong>failure-intolerant engineering</strong> to broader enterprise challenges. Drawing on deep experience in <strong>nuclear propulsion, semiconductor manufacturing, and defense systems</strong>, our methodology translates complex regulatory frameworks into verifiable, engineering-centric solutions.</p>
+            <p>We reject the "checklist" approach to compliance. Instead, we treat GRC (Governance, Risk, and Compliance) as an architectural constraint, ensuring that systems are secure by design regardless of the specific regulatory overlay.</p>
+        </div>
+    </section>
+
+    <section id="capabilities">
+        <h2 class="section-title">Core Capabilities</h2>
+        <div class="grid">
+            <div class="card">
+                <div>
+                    <h3>Safety-Critical Systems</h3>
+                    <p>Failure-intolerant security architecture for aerospace, medical, and nuclear environments. We align rigorous engineering with DO-326A, ISO 21434, and cyber-physical safety standards.</p>
+                </div>
+                <div class="tag-container">
+                    <span class="tag">Cyber-Physical Security</span>
+                    <span class="tag">Embedded Systems</span>
+                    <span class="tag">Nuclear/Avionics Rigor</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <div>
+                    <h3>AI Risk & Governance</h3>
+                    [cite_start]<p>Operationalizing NIST AI RMF for Generative AI and GPU clusters[cite: 164, 165]. We design adversarial defenses, model guardrails, and secure control planes for high-value AI workloads.</p>
+                </div>
+                <div class="tag-container">
+                    <span class="tag">NIST AI RMF</span>
+                    <span class="tag">Adversarial Testing</span>
+                    <span class="tag">Model Security</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <div>
+                    <h3>Federal Cloud Architecture</h3>
+                    [cite_start]<p>Architecting cloud enclaves for FedRAMP High, CMMC 2.0, and IL5/6[cite: 557, 568]. We bridge the gap between commercial speed and federal compliance requirements.</p>
+                </div>
+                <div class="tag-container">
+                    <span class="tag">FedRAMP / CMMC</span>
+                    <span class="tag">GovCloud Design</span>
+                    <span class="tag">Boundary Defense</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <div>
+                    <h3>Supply Chain Assurance</h3>
+                    <p>Patent-backed strategies for hardware validation and anti-counterfeit protection. [cite_start]Securing the chain of custody from the semiconductor foundry to deployment[cite: 697, 742].</p>
+                </div>
+                <div class="tag-container">
+                    <span class="tag">US Patent #9,811,671</span>
+                    <span class="tag">Hardware Root-of-Trust</span>
+                    <span class="tag">Component Auth</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <div>
+                    <h3>Strategic GRC Design</h3>
+                    <p>Translating complex regulatory frameworks into simplified engineering controls. [cite_start]We harmonize 1,000+ requirements into manageable, automated workflows[cite: 114].</p>
+                </div>
+                <div class="tag-container">
+                    <span class="tag">Regulatory Harmonization</span>
+                    <span class="tag">Program Design</span>
+                    <span class="tag">Policy Engineering</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <div>
+                    <h3>Audit Readiness & Remediation</h3>
+                    <p>Pre-audit assessments and "Get Well" plans for SOC 2, ISO 27001, and regulatory findings. [cite_start]We act as your internal advocate to ensure attestation success[cite: 174].</p>
+                </div>
+                <div class="tag-container">
+                    <span class="tag">SOC 2 / ISO 27001</span>
+                    <span class="tag">Gap Analysis</span>
+                    <span class="tag">Audit Defense</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-cta">
+            <h3>Ready to discuss your architecture?</h3>
+            <br>
+            <a href="https://www.linkedin.com/in/christopherdavis/" target="_blank" class="cta-button" style="border-color: var(--text-main);">
+                Message on LinkedIn
+            </a>
+        </div>
+        <div class="copyright">
+            &copy; 2025 Compliance QuickStart LLC. All Rights Reserved.<br>
+            Dallas, Texas | Remote
+        </div>
+    </footer>
+
+</body>
+</html>
