@@ -7,7 +7,7 @@
     <style>
         /* --- RESET & VARIABLES --- */
         :root {
-            /* Branding Colors based on your logo */
+            /* Branding Colors */
             --bg-dark: #021331;       /* Deep Navy Background */
             --primary: #0D2B51;       /* Lighter Navy (Card Backgrounds) */
             --accent: #63767D;        /* Steel Grey (Accents/Borders) */
@@ -39,7 +39,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px 5%;
-            background-color: rgba(2, 19, 49, 0.95); /* Slight transparency */
+            background-color: rgba(2, 19, 49, 0.95);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -78,7 +78,6 @@
             align-items: center;
             text-align: center;
             padding: 0 20px;
-            /* Subtle radial gradient to spotlight the text */
             background: radial-gradient(circle at center, var(--primary) 0%, var(--bg-dark) 80%);
         }
 
@@ -140,16 +139,6 @@
             line-height: 1.8;
         }
 
-        .patent-box {
-            margin-top: 30px;
-            padding: 15px 20px;
-            border-left: 3px solid var(--highlight);
-            background: rgba(255, 255, 255, 0.03);
-            display: inline-block;
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
         /* --- CAPABILITIES GRID --- */
         .grid {
             display: grid;
@@ -203,7 +192,7 @@
 
         /* --- FOOTER --- */
         footer {
-            background-color: #010c1f; /* Slightly darker than body */
+            background-color: #010c1f;
             padding: 60px 10%;
             text-align: center;
             border-top: 1px solid rgba(255,255,255,0.05);
@@ -267,15 +256,28 @@
     <section id="capabilities">
         <h2 class="section-title">Core Capabilities</h2>
         <div class="grid">
+            
             <div class="card">
                 <div>
                     <h3>Safety-Critical Systems</h3>
-                    <p>Failure-intolerant security architecture for aerospace, medical, and nuclear environments. We align rigorous engineering with DO-326A, ISO 21434, and cyber-physical safety standards.</p>
+                    <p>Failure-intolerant security architecture for aerospace, medical, and nuclear environments. We align rigorous engineering with cyber-physical safety standards.</p>
                 </div>
                 <div class="tag-container">
                     <span class="tag">Cyber-Physical Security</span>
                     <span class="tag">Embedded Systems</span>
                     <span class="tag">Nuclear/Avionics Rigor</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <div>
+                    <h3>Product Security</h3>
+                    <p>Transforming complex compliance frameworks into actionable engineering requirements. We consolidate fragmented citations into unified control sets to prevent wasted effort.</p>
+                </div>
+                <div class="tag-container">
+                    <span class="tag">Requirement Consolidation</span>
+                    <span class="tag">SDLC Optimization</span>
+                    <span class="tag">Secure-by-Design</span>
                 </div>
             </div>
 
@@ -288,6 +290,18 @@
                     <span class="tag">NIST AI RMF</span>
                     <span class="tag">Adversarial Testing</span>
                     <span class="tag">Model Security</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <div>
+                    <h3>Quantitative Risk</h3>
+                    <p>Designing empirical risk models that calculate blast radius and threat likelihood. We replace subjective heatmaps with data-driven metrics to prioritize resources.</p>
+                </div>
+                <div class="tag-container">
+                    <span class="tag">Empirical Risk</span>
+                    <span class="tag">Blast Radius Analysis</span>
+                    <span class="tag">Executive Advisory</span>
                 </div>
             </div>
 
@@ -315,29 +329,6 @@
                 </div>
             </div>
 
-            <div class="card">
-                <div>
-                    <h3>Product Security</h3>
-                    <p>Transforming complex compliance frameworks into actionable engineering requirements. We consolidate thousands of fragmented citations into unified control sets to prevent wasted effort.</p>
-                </div>
-                <div class="tag-container">
-                    <span class="tag">Requirement Consolidation</span>
-                    <span class="tag">SDLC Optimization</span>
-                    <span class="tag">Secure-by-Design</span>
-                </div>
-            </div>
-
-            <div class="card">
-                <div>
-                    <h3>Quantitative Risk Strategy</h3>
-                    <p>Designing empirical risk models that calculate blast radius and threat likelihood. We replace subjective heatmaps with data-driven metrics to prioritize resources.</p>
-                </div>
-                <div class="tag-container">
-                    <span class="tag">Empirical Risk Models</span>
-                    <span class="tag">Blast Radius Analysis</span>
-                    <span class="tag">Executive Advisory</span>
-                </div>
-            </div>
         </div>
     </section>
 
